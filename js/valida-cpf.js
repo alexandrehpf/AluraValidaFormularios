@@ -2,10 +2,8 @@ export default function ehUmCPF(campo){
     const cpf = campo.value.replace(/\.|-/g, "");
 
     if(validaNumeorsRepetidos(cpf) || validaPrimeiroDigito(cpf,10,9) || validaPrimeiroDigito(cpf,11,10)){
-        console.log("Esse cpf não existe!")
-    } else {
-        console.log("Existe!")
-    }
+        campo.setCustomValidity('Esse CPF não é valido');
+    } 
 }
 
 function validaNumeorsRepetidos(cpf){
